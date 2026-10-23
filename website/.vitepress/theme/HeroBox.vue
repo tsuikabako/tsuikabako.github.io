@@ -1,18 +1,18 @@
 <script setup lang="ts">
-// The home page's hero graphic: the black box of the logo, open, with source cards (two manga pages, one anime episode)
-// dropping into it one after another. The front of the box hides each card as it falls in (clip path below).
-const cards = [
-  { kind: "manga", x: -34, tilt: -8, delay: 0 },
-  { kind: "anime", x: 6, tilt: 5, delay: 1.6 },
-  { kind: "manga", x: 38, tilt: -3, delay: 3.2 },
+// The home page's hero graphic: the black box of the logo, open, with the logo's plus dropping into it again and again.
+// The front of the box hides each plus as it falls in (clip path below).
+const pluses = [
+  { x: -30, tilt: -6, delay: 0 },
+  { x: 8, tilt: 5, delay: 1.6 },
+  { x: 34, tilt: -3, delay: 3.2 },
 ];
 </script>
 
 <template>
-  <div class="hero-box" role="img" aria-label="Sources dropping into a black box">
+  <div class="hero-box" role="img" aria-label="A plus dropping into a black box">
     <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <!-- everything above the box's front edges: a card below them is inside the box -->
+        <!-- everything above the box's front edges: a plus below them is inside the box -->
         <clipPath id="tb-above-front">
           <path d="M0 0H320V170H250L160 215L70 170H0Z" />
         </clipPath>
@@ -23,37 +23,26 @@ const cards = [
       <path class="flap" d="M160 125L250 170L260 123L170 78Z" />
       <path class="inside" d="M70 170L160 125L250 170L160 215Z" />
 
-      <!-- the cards, falling into the opening -->
+      <!-- the pluses, falling into the opening -->
       <g clip-path="url(#tb-above-front)">
         <g
-          v-for="(card, i) in cards"
+          v-for="(plus, i) in pluses"
           :key="i"
-          class="card"
-          :style="{ animationDelay: `${card.delay}s`, '--x': `${card.x}px`, '--tilt': `${card.tilt}deg` }"
+          class="falling"
+          :style="{ animationDelay: `${plus.delay}s`, '--x': `${plus.x}px`, '--tilt': `${plus.tilt}deg` }"
         >
-          <g transform="translate(136 0)">
-            <rect class="card-face" width="48" height="62" rx="7" />
-            <template v-if="card.kind === 'manga'">
-              <rect class="card-ink" x="9" y="9" width="30" height="22" rx="3" />
-              <rect class="card-ink" x="9" y="37" width="30" height="4" rx="2" />
-              <rect class="card-ink" x="9" y="46" width="20" height="4" rx="2" />
-            </template>
-            <template v-else>
-              <path class="card-ink" d="M19 20L34 31L19 42Z" />
-            </template>
-          </g>
+          <path class="plus-outline" d="M160 11v40M140 31h40" />
+          <path class="plus" d="M160 11v40M140 31h40" />
         </g>
       </g>
 
-      <!-- the front of the box, over the cards -->
+      <!-- the front of the box, over the pluses -->
       <path class="side" d="M70 170L160 215V295L70 250Z" />
       <path class="side dark" d="M250 170L160 215V295L250 250Z" />
       <path class="edge" d="M70 170L160 215L250 170M160 215V295" />
       <!-- the two front flaps, folded open outward over the front faces -->
       <path class="flap front" d="M70 170L160 215L126 232L36 187Z" />
       <path class="flap front" d="M250 170L160 215L194 232L284 187Z" />
-      <!-- the plus of the logo, on the left face below its flap -->
-      <path class="plus" d="M113 238v28M99 252h28" />
     </svg>
   </div>
 </template>
@@ -119,21 +108,19 @@ svg {
 }
 .plus {
   stroke: #ffffff;
-  stroke-width: 6;
+  stroke-width: 11;
   stroke-linecap: round;
 }
-.card-face {
-  fill: #ffffff;
+/* a black outline under the falling plus, so it shows on the light page as well as over the dark box */
+.plus-outline {
   stroke: #101012;
-  stroke-width: 3;
+  stroke-width: 17;
+  stroke-linecap: round;
 }
-.card-ink {
-  fill: #101012;
-}
-.card {
+.falling {
   opacity: 0;
   transform-box: view-box;
-  /* the middle of a card at the top of the box (it is drawn at x 136, 48 x 62) */
+  /* the middle of the plus (it is drawn around 160, 31) */
   transform-origin: 160px 31px;
   animation: drop 4.8s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
@@ -155,7 +142,7 @@ svg {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .card {
+  .falling {
     animation: none;
     opacity: 1;
     transform: translate(var(--x), 40px) rotate(var(--tilt));
