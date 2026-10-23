@@ -1,5 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Tsuikabako">
-  <path d="M8 22 32 10l24 12v24L32 58 8 46z" fill="#6d5bd0"/>
-  <path d="M8 22l24 12 24-12M32 34v24" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
-  <path d="M32 16v12M26 22h12" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="Tsuikabako">
+  <!-- 追加箱 (tsuikabako, "add-on box"): a black box, framed like a seal, with a plus on it. The faint outer edge keeps it
+       visible on a dark page. The one logo of the site and the organization (export the PNG from this file). -->
+  <rect x="12" y="12" width="104" height="104" rx="16" fill="#101012"/>
+  <rect x="13" y="13" width="102" height="102" rx="15" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2"/>
+  <rect x="22" y="22" width="84" height="84" rx="10" fill="none" stroke="#ffffff" stroke-width="3.5"/>
+  <path d="M64 40v48M40 64h48" stroke="#ffffff" stroke-width="11" stroke-linecap="round"/>
 </svg>
