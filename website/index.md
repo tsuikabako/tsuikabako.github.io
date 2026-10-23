@@ -5,9 +5,6 @@ hero:
   name: Tsuikabako
   text: Sources for Kurobayomi
   tagline: Add one address to Kurobayomi and its manga and anime sources appear in Browse. Sources update themselves.
-  image:
-    src: /logo.svg
-    alt: Tsuikabako
   actions:
     - theme: brand
       text: Add to Kurobayomi
