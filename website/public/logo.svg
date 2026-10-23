@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Tsuikabako">
+  <path d="M8 22 32 10l24 12v24L32 58 8 46z" fill="#6d5bd0"/>
+  <path d="M8 22l24 12 24-12M32 34v24" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M32 16v12M26 22h12" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+</svg>

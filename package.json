@@ -1,0 +1,13 @@
+{
+  "name": "tsuikabako-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev website",
+    "build": "vitepress build website",
+    "preview": "vitepress preview website"
+  },
+  "devDependencies": {
+    "vitepress": "1.6.4"
+  }
+}

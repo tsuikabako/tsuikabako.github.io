@@ -1,0 +1,23 @@
+import { defineConfig } from "vitepress";
+import { ORG, SOURCE_REPO } from "./constants";
+
+export default defineConfig({
+  title: "Tsuikabako",
+  description: "Sources for Kurobayomi, the anime and manga app for the Linux desktop.",
+  lang: "en",
+  cleanUrls: true,
+  lastUpdated: false,
+  head: [["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }]],
+  themeConfig: {
+    logo: "/logo.svg",
+    nav: [
+      { text: "Add", link: "/add" },
+      { text: "Sources", link: "/sources" },
+      { text: "Help", link: "/help" },
+    ],
+    socialLinks: [{ icon: "github", link: `https://github.com/${ORG}` }],
+    footer: {
+      message: `Sources are community-made. Tsuikabako hosts no content; the <a href="${SOURCE_REPO}">source code</a> is Apache-2.0.`,
+    },
+  },
+});
