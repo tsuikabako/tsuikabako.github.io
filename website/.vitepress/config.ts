@@ -3,7 +3,7 @@ import { ORG, SOURCE_REPO } from "./constants";
 
 export default defineConfig({
   title: "Tsuikabako",
-  description: "Sources for Kurobayomi, the anime and manga app for the Linux desktop.",
+  description: "Sources for Kurobayomi, the anime and manga app for Linux and Windows.",
   lang: "en",
   cleanUrls: true,
   lastUpdated: false,
