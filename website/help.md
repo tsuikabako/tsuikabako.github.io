@@ -17,10 +17,10 @@ are written by volunteers, so a request can take a while or be declined.
 
 ## Write a source
 
-A source is a small WASM plug-in, or a text recipe for simple sites. How to write, test and submit one is in
-<a :href="`${SOURCE_REPO}/blob/main/CONTRIBUTING.md`">CONTRIBUTING.md</a>; the formats themselves are documented with the
-app: [source recipes](https://github.com/kurobayomi/kurobayomi/blob/main/docs/source-recipes.md) and
-[plug-ins](https://github.com/kurobayomi/kurobayomi/blob/main/docs/source-abi.md).
+A source is a text recipe for simple sites, a few lines of settings for a Madara site, or a small WASM plug-in built
+on the Tsuikabako toolkit. [Make sources](/make/) explains each way, how to test a source, and how to publish it here or
+in a repository of your own. Sending one to Tsuikabako is described in
+<a :href="`${SOURCE_REPO}/blob/main/CONTRIBUTING.md`">CONTRIBUTING.md</a>.
 
 ## About
 
