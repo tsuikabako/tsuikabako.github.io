@@ -81,8 +81,9 @@ Aniyomi extractor library when there is one. Things that bite:
 
 The player's **Quality** menu lists heights ("1080p"), merged across servers; its **Server** list (in the ⋮ menu) lists
 the servers by `hoster_name`. A video's height comes from its `resolution` or a height in its title ("720p"). A video
-with no known height shows its title in the Quality menu instead, and equal titles merge into one entry, so give such
-videos one neutral title rather than repeating the server's name.
+with no known height shows its title in the Quality menu instead, and equal titles merge into one entry. So the title
+is the height ("1080p") when the host says it, and **"Auto"** when it does not; never the server's name, which the
+Server list already shows. The extractors title their videos this way.
 
 ## Check it
 
