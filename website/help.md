@@ -7,7 +7,7 @@ import { OUTPUT_REPO, SOURCE_REPO } from "./.vitepress/constants";
 ## A source does not work
 
 Check its status on the [source list](/sources) first: a source the site blocks or one already known to be broken is
-being looked at. Otherwise open an issue in <a :href="`${SOURCE_REPO}/issues`">extensions-source</a> with the source's
+being looked at. Otherwise open an issue in <a :href="`${OUTPUT_REPO}/issues`">extensions</a> with the source's
 name, what you did and what happened. Do not include links to copyrighted content.
 
 ## Request a source
