@@ -23,8 +23,9 @@ export default defineConfig({
           items: [
             { text: "How it works", link: "/make/" },
             { text: "Recipes", link: "/make/recipe" },
-            { text: "Madara sites", link: "/make/madara" },
+            { text: "Theme sites", link: "/make/madara" },
             { text: "Plug-ins", link: "/make/plugin" },
+            { text: "Anime sources", link: "/make/anime" },
             { text: "Your own repository", link: "/make/repository" },
             { text: "Reference", link: "/make/reference" },
           ],

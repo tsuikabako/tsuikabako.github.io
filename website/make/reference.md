@@ -75,6 +75,8 @@ A source's id is a positive 64-bit number that never changes; the library, histo
   python3 -c 'import hashlib; d = hashlib.md5(b"mangapill/en/1").digest(); print(int.from_bytes(d[:8], "big") & (2**63 - 1))'
   ```
 
+- **Some extensions set the id themselves** in their `build.gradle` (`id = 5L`, often an old built-in source's
+  number). Then that number is the id, not the formula's.
 - **A new source** uses the same formula with its own name and language, which keeps ids unique between repositories.
 
 ## Stored addresses

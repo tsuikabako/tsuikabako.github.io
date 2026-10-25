@@ -122,6 +122,14 @@ Page::image("https://img.mysite.example/1.jpg")
 `date_upload` is milliseconds since 1970 (`host.unix_seconds()` is the clock for "2 days ago"); `status` uses the
 constants in `kuro_guest::wire::status`.
 
+### What to put in a stored address
+
+The `url` of a title, chapter or episode is all the app gives back when it later asks for details, chapters or pages,
+so it must hold **everything those later requests need**. Usually that is the path on the site (`/manga/blue-lake`). An
+API that needs two ids for a chapter's pages gets both in the chapter's address (Desu stores
+`/<title id>/chapters/<chapter id>`). Pick the form once: it never changes after release, because libraries and backups
+keep it.
+
 ### HTML helpers
 
 With the `html` feature (`kuro-guest = { workspace = true, features = ["html"] }`):
@@ -168,6 +176,19 @@ let out = kuro_guest::invoke(&MySite, &host, "popular", r#"{"args":{"page":1}}"#
 cargo test -p kuro-mysite
 ```
 
+## Try it live
+
+Saved pages show the parsers work; only the live site shows the source works. Before you send it, check every step
+once against the real site, as a user would:
+
+1. The lists: popular, latest (if offered) and a search return titles, and the next-page flag is right.
+2. A title: details, then its chapters (or episodes). Pick a title anyone can read without an account.
+3. A chapter's pages (or an episode's servers and each server's videos).
+4. One page image (or the first bytes of each video), downloaded with exactly the headers your source gives for it.
+
+Then try it in the app: build an index that points at a test branch of your fork and add it in Kurobayomi (the steps
+are in <a :href="`${SOURCE_REPO}/blob/main/CONTRIBUTING.md#try-it-in-the-app`">CONTRIBUTING.md</a>).
+
 ## Build
 
 ```sh
@@ -180,11 +201,21 @@ The file must be under 1 MiB and import nothing but the app's interface (the che
 `wasm32-unknown-unknown`, never `wasm32-wasip2`: the sandbox has no WASI. `tools/build.sh` builds every source into
 `dist/`.
 
-## Theme libraries
+## Shared code: themes and languages
 
-Sites that share a site template share code too. `lib/madara` reads every Madara site, so such a site is only its
-settings: see [Madara sites](./madara). A library for a new theme follows the same pattern: a crate in `lib/` that
-implements `Source` for a settings type, and one small source per site.
+Sources that read the same kind of site share their code in a crate in `lib/`: a settings type that implements
+`Source`, and one small source per site whose `lib.rs` is the settings and `kuro_guest::plugin!(SITE)`.
+
+| Library | Reads | Sources on it |
+|---|---|---|
+| `lib/madara` | every Madara WordPress site | 18 manga sites ([Theme sites](./madara)) |
+| `lib/grouple` | the GroupLe sites | Usagi, ReadManga, SelfManga ([Theme sites](./madara#grouple-sites)) |
+| `lib/novelcool` | NovelCool in each language | NovelCool English and Spanish |
+| `lib/extractors` | video hosts | anime sources ([Anime sources](./anime)) |
+
+**One site in several languages** works the same way: one source per language (each has its own switch in the app and
+its own id, from its own `lang`), and the code in a `lib/` crate. Name the crates apart: a library is `kuro-<name>`
+and a source `kuro-<id>`, so a language's source folder is for example `novelcoolen`, not `novelcool`.
 
 The full contract with the app (every operation and field) is in the [Reference](./reference) and the app's
 <a :href="`${APP_REPO}/blob/main/docs/source-abi.md`">source-abi.md</a>.

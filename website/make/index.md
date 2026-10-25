@@ -28,9 +28,9 @@ Pick the first one that fits the site.
 | | **Recipe** | **Theme site** | **Plug-in** |
 |---|---|---|---|
 | What you write | one text file of CSS selectors | a few lines of settings | a small Rust program |
-| Good for | simple HTML sites: lists, a title page, image pages, direct video links | sites built on a known site template (Madara, for manga) | everything else: JSON APIs, POST requests, relative dates, scrambled images, video players |
+| Good for | simple HTML sites: lists, a title page, image pages, direct video links | sites built on a known site template (Madara and GroupLe, for manga) | everything else: JSON APIs, POST requests, relative dates, scrambled images, video players |
 | Programming | none | none (copy and fill in) | Rust, with the Tsuikabako toolkit doing the plumbing |
-| Guide | [Recipes](./recipe) | [Madara sites](./madara) | [Plug-ins](./plugin) |
+| Guide | [Recipes](./recipe) | [Theme sites](./madara) | [Plug-ins](./plugin), [Anime sources](./anime) |
 
 Three simple sites are three recipes; three Madara sites are three small settings files; three sites that need logic
 are three small programs on the same toolkit. Either way the user sees three sources.

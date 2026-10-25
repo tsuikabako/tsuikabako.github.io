@@ -12,7 +12,7 @@ https address. Kurobayomi treats every repository the same way.
 1. Fork or copy <a :href="SOURCE_REPO">extensions-source</a>. It brings the toolkit (`lib/guest`), the Madara library
    (`lib/madara`), the template, and the tools that build and list sources.
 2. Delete the sources in `sources/` you do not want to publish, and add yours (see [Recipes](./recipe),
-   [Madara sites](./madara), [Plug-ins](./plugin)).
+   [Theme sites](./madara), [Plug-ins](./plugin)).
 3. Build and write the list, naming the address the files will be served from:
 
    ```sh
