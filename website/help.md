@@ -1,5 +1,5 @@
 <script setup>
-import { SOURCE_REPO } from "./.vitepress/constants";
+import { OUTPUT_REPO, SOURCE_REPO } from "./.vitepress/constants";
 </script>
 
 # Help
@@ -12,7 +12,7 @@ name, what you did and what happened. Do not include links to copyrighted conten
 
 ## Request a source
 
-Open an issue in <a :href="`${SOURCE_REPO}/issues`">extensions-source</a> with the site's name and language. Sources
+Open an issue in <a :href="`${OUTPUT_REPO}/issues`">extensions</a> with the site's name and language. Sources
 are written by volunteers, so a request can take a while or be declined.
 
 ## Write a source
