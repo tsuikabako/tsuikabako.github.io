@@ -5,13 +5,7 @@ hero:
   name: Tsuikabako
   text: Sources for Kurobayomi
   tagline: Add one address to Kurobayomi and its manga and anime sources appear in Browse. Sources update themselves.
-  actions:
-    - theme: brand
-      text: Add to Kurobayomi
-      link: /add
-    - theme: alt
-      text: See the sources
-      link: /sources
+# no `actions` here: the theme's HomeAdd puts the add button, the address and the steps by hand under the tagline
 
 features:
   - title: One address

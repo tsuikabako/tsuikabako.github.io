@@ -11,7 +11,8 @@ export default defineConfig({
   themeConfig: {
     logo: "/logo.svg",
     nav: [
-      { text: "Add", link: "/add" },
+      // adding the repository is the home page's hero (theme/HomeAdd.vue)
+      { text: "Add", link: "/" },
       { text: "Sources", link: "/sources" },
       { text: "Make sources", link: "/make/" },
       { text: "Help", link: "/help" },
