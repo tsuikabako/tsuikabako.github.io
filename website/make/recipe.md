@@ -1,3 +1,7 @@
+---
+description: "Write a Kurobayomi source as one TOML recipe of addresses and CSS selectors, with no code, and test it against saved pages."
+---
+
 <script setup>
 import { APP_REPO } from "../.vitepress/constants";
 </script>

@@ -1,3 +1,7 @@
+---
+description: "Write a Kurobayomi source as a small Rust plug-in compiled to WebAssembly, with the Tsuikabako toolkit, tests on saved pages and a live check."
+---
+
 <script setup>
 import { SOURCE_REPO, APP_REPO } from "../.vitepress/constants";
 </script>

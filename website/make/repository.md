@@ -1,3 +1,7 @@
+---
+description: "Publish Kurobayomi sources from your own repository: a list file and source files at any public https address, built with the Tsuikabako tools."
+---
+
 <script setup>
 import { SOURCE_REPO } from "../.vitepress/constants";
 </script>

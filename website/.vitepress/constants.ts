@@ -1,5 +1,7 @@
 // Where the repository lives. Every page reads these, so a move is one edit here.
 export const ORG = "tsuikabako";
+// this website's own address (canonical links, the sitemap, link previews)
+export const SITE_URL = `https://${ORG}.github.io/`;
 export const INDEX_URL = `https://raw.githubusercontent.com/${ORG}/extensions/main/index.min.json`;
 export const SOURCE_REPO = `https://github.com/${ORG}/extensions-source`;
 export const OUTPUT_REPO = `https://github.com/${ORG}/extensions`;

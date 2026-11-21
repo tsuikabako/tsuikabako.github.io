@@ -1,3 +1,7 @@
+---
+description: "Anime sources for Kurobayomi: episodes, servers and videos, the shared video host extractors, and how the player lists qualities."
+---
+
 <script setup>
 import { SOURCE_REPO } from "../.vitepress/constants";
 </script>

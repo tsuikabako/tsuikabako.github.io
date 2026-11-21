@@ -1,3 +1,7 @@
+---
+description: "The contract between a source plug-in and Kurobayomi: operations, data shapes, what the app lends a source, limits, source ids, stored addresses."
+---
+
 <script setup>
 import { SOURCE_REPO, APP_REPO } from "../.vitepress/constants";
 </script>

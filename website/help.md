@@ -1,3 +1,7 @@
+---
+description: "What to do when a Tsuikabako source does not work, how to request a new source, and where to start writing one."
+---
+
 <script setup>
 import { OUTPUT_REPO, SOURCE_REPO } from "./.vitepress/constants";
 </script>

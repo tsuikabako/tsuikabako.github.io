@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- The picture link previews show for every page (public/og-image.png, 1200 x 630). Export it again after a change:
+       rsvg-convert -w 1200 -h 630 website/og-image.svg -o website/public/og-image.png
+       The logo is the site's own public/logo.svg. -->
+  <rect width="1200" height="630" fill="#101012"/>
+  <image href="public/logo.svg" x="100" y="165" width="300" height="300"/>
+  <g font-family="Segoe UI, Inter, Arial, sans-serif">
+    <text x="460" y="295" font-size="104" font-weight="700" fill="#ffffff">Tsuikabako</text>
+    <text x="464" y="375" font-size="46" fill="#c8c8cc">Sources for Kurobayomi</text>
+    <text x="464" y="460" font-size="32" fill="#8a8a90">tsuikabako.github.io</text>
+  </g>
+</svg>

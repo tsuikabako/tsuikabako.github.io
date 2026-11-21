@@ -1,3 +1,7 @@
+---
+description: "Add a manga site built on the Madara or GroupLe theme to Tsuikabako with a few lines of settings."
+---
+
 <script setup>
 import { SOURCE_REPO } from "../.vitepress/constants";
 </script>

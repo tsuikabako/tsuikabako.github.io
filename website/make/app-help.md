@@ -1,3 +1,7 @@
+---
+description: "What Kurobayomi does for every source: Cloudflare and Anubis checks, pages built by scripts, scrambled images, headers, rate limits, HLS video."
+---
+
 <script setup>
 import { SOURCE_REPO, APP_REPO } from "../.vitepress/constants";
 </script>

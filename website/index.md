@@ -1,4 +1,7 @@
 ---
+title: "Tsuikabako: sources for Kurobayomi"
+titleTemplate: false
+description: "Add one address to Kurobayomi and get anime and manga sources in Browse. Sandboxed WASM plug-ins, open source, and they update themselves."
 layout: home
 
 hero:

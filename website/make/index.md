@@ -1,3 +1,7 @@
+---
+description: "How Kurobayomi sources work and how to write one: pick a recipe, a theme site or a plug-in, then test it and publish it."
+---
+
 <script setup>
 import { SOURCE_REPO } from "../.vitepress/constants";
 </script>

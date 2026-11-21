@@ -1,4 +1,5 @@
 ---
+description: "Every anime and manga source in Tsuikabako, read live from the repository, with its language and status, checked every six hours."
 aside: false
 ---
 

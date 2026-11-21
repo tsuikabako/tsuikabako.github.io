@@ -1,5 +1,15 @@
 import { defineConfig } from "vitepress";
-import { ORG, SOURCE_REPO } from "./constants";
+import { ORG, SITE_URL, SOURCE_REPO } from "./constants";
+import { seoHead, type Site } from "./seo";
+
+const site: Site = {
+  url: SITE_URL,
+  name: "Tsuikabako",
+  image: "/og-image.png",
+  imageAlt: "Tsuikabako: sources for Kurobayomi",
+};
+// pages that only send the visitor elsewhere (add.md goes to the home page) stay out of the sitemap
+const REDIRECTS = ["add"];
 
 export default defineConfig({
   title: "Tsuikabako",
@@ -7,7 +17,15 @@ export default defineConfig({
   lang: "en",
   cleanUrls: true,
   lastUpdated: false,
-  head: [["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }]],
+  head: [
+    ["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }],
+    ["link", { rel: "apple-touch-icon", href: "/apple-touch-icon.png" }],
+  ],
+  sitemap: {
+    hostname: SITE_URL,
+    transformItems: (items) => items.filter((item) => !REDIRECTS.includes(item.url)),
+  },
+  transformHead: (ctx) => seoHead(site, ctx),
   themeConfig: {
     logo: "/logo.svg",
     nav: [
