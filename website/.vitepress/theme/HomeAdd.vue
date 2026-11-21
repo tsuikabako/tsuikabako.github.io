@@ -2,11 +2,13 @@
 // The home page's hero actions: adding the repository is the page's one job, so it happens here, with no page in between.
 // The buttons and the address are the shared AddButtons; the steps by hand fold away under them.
 import AddButtons from "./AddButtons.vue";
+import { APP_SITE } from "../constants";
 </script>
 
 <template>
   <div class="home-add">
     <AddButtons />
+    <p class="needs">You need <a :href="APP_SITE">Kurobayomi</a> installed.</p>
     <details class="by-hand">
       <summary>Add it by hand</summary>
       <ol>
@@ -52,10 +54,22 @@ import AddButtons from "./AddButtons.vue";
   .home-add :deep(.buttons) {
     justify-content: center;
   }
+  .needs,
   .sources,
   .by-hand summary {
     text-align: center;
   }
+}
+.needs {
+  margin: 12px 0 0;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--vp-c-text-2);
+}
+.needs a {
+  color: var(--vp-c-text-1);
+  font-weight: 600;
+  text-decoration: underline;
 }
 .by-hand {
   margin-top: 16px;
