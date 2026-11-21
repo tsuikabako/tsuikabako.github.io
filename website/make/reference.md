@@ -15,7 +15,7 @@ The app calls `invoke(op, input)`. The toolkit answers `info`, `create-sources` 
 
 | Op | Input (`args`) | Answer |
 |---|---|---|
-| `info` | | `{id, name, lang, supportsLatest, requestGapMs?}` |
+| `info` | | `{id, name, lang, supportsLatest, requestGapMs?, supportsPopular?}` (`supportsPopular` is read by apps after 0.4.0) |
 | `request-headers` | | `[[name, value], …]`: headers for this source's page images and videos; "unknown op" keeps the app's default |
 | `popular`, `latest` | `page` (from 1) | `{mangas: [Manga], hasNextPage}` or `{animes: [Anime], hasNextPage}` |
 | `search` | `page`, `query`, `filters` | the same |
@@ -56,6 +56,10 @@ All in `kuro_guest::wire`; every field has a default, camelCase on the wire.
 | `unix_seconds()` | the clock, for dates |
 | `pref_get(key)`, `pref_set(key, json)` | small saved values, per source |
 | `log(level, text)` | 0 debug, 1 info, 2 warning, 3 error |
+| `page_read(request)` | one web page read in the app's hidden browser page (`kuro_guest::PageRead`); only in a plug-in built with `plugin!(MySite, pages)`, app 0.4.0 or newer |
+
+The app also handles browser checks, scrambled images, image and video headers, rate limits and video servers that
+refuse the player for every source: see [What the app handles](./app-help).
 
 ## Limits
 

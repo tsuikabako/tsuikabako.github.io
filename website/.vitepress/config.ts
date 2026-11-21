@@ -26,6 +26,7 @@ export default defineConfig({
             { text: "Theme sites", link: "/make/madara" },
             { text: "Plug-ins", link: "/make/plugin" },
             { text: "Anime sources", link: "/make/anime" },
+            { text: "What the app handles", link: "/make/app-help" },
             { text: "Your own repository", link: "/make/repository" },
             { text: "Reference", link: "/make/reference" },
           ],
